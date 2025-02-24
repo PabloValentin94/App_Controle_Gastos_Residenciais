@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <color name="colorPrimary">#202020</color>
+    <color name="colorPrimaryDark">#202020</color> <!-- Cor da barra de serviços do Android. -->
+    <color name="colorAccent">#FFFF00</color> <!-- Cor de destaque (Usada em Inputs, DatePickers, etc.). -->
+
+</resources>

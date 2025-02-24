@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Controle_Gastos_Residenciais.View.Modules.Pessoa.Cadastro_Pessoa"
+             Title="Cadastro de Pessoa"
+             Shell.TabBarIsVisible="False"
+             Style="{ StaticResource pages_style }">
+
+    <ScrollView Style="{ StaticResource scroll_views_style }">
+
+        <VerticalStackLayout Style="{ StaticResource vertical_stack_layouts_style }">
+            
+            <!-- Campos. -->
+
+            <Label Text="Nome:" Style="{ StaticResource labels_style }"/>
+            <Entry x:Name="txt_nome_pessoa" Keyboard="Default" Style="{ StaticResource entries_style }"/>
+
+            <Label Text="Idade:" Style="{ StaticResource labels_style }"/>
+            <Entry x:Name="txt_idade_pessoa" Keyboard="Numeric" Style="{ StaticResource entries_style }"/>
+            
+            <!-- Botão de salvamento. -->
+
+            <Button x:Name="btn_salvar_pessoa" Text="Salvar" Clicked="btn_salvar_pessoa_Clicked" Style="{ StaticResource save_buttons_style }"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

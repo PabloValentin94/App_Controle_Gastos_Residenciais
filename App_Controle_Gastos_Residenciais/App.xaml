@@ -1,0 +1,135 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App_Controle_Gastos_Residenciais"
+             x:Class="App_Controle_Gastos_Residenciais.App">
+
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Cores do aplicativo. -->
+
+            <Color x:Key="main_color">#FFFF00</Color>
+
+            <Color x:Key="shell_background_color">#202020</Color>
+            <Color x:Key="shell_text_color">#FFFFFF</Color>
+
+            <Color x:Key="pages_background_color">#FFFFFF</Color>
+            <Color x:Key="pages_text_color">#000000</Color>
+
+            <!-- Estilos das páginas de cadastro. -->
+
+            <Style x:Key="pages_style" TargetType="Page">
+
+                <Setter Property="BackgroundColor" Value="{ StaticResource pages_background_color }"/>
+
+            </Style>
+
+            <Style x:Key="scroll_views_style" TargetType="ScrollView">
+
+                <Setter Property="Orientation" Value="Vertical"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+
+            </Style>
+
+            <Style x:Key="vertical_stack_layouts_style" TargetType="VerticalStackLayout">
+
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="Spacing" Value="15"/>
+
+            </Style>
+
+            <Style x:Key="labels_style" TargetType="Label">
+
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="{ StaticResource pages_text_color }"/>
+
+            </Style>
+
+            <Style x:Key="entries_style" TargetType="Entry">
+
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="TextColor" Value="{ StaticResource pages_text_color }"/>
+
+            </Style>
+
+            <Style x:Key="pickers_style" TargetType="Picker">
+
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="TextColor" Value="{ StaticResource pages_text_color }"/>
+
+            </Style>
+
+            <Style x:Key="save_buttons_style" TargetType="Button">
+
+                <Setter Property="CornerRadius" Value="50"/>
+                <Setter Property="Margin" Value="0,15,0,0"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BackgroundColor" Value="{ StaticResource pages_text_color }"/>
+                <Setter Property="TextColor" Value="{ StaticResource main_color }"/>
+                <Setter Property="TextTransform" Value="Uppercase"/>
+
+            </Style>
+
+            <!-- Estilos das páginas de listagem. -->
+
+            <Style x:Key="root_grid_style" TargetType="Grid">
+
+                <Setter Property="ColumnDefinitions" Value="*"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="RowSpacing" Value="15"/>
+                <Setter Property="Padding" Value="15"/>
+
+            </Style>
+
+            <Style x:Key="frames_style" TargetType="Frame">
+
+                <Setter Property="CornerRadius" Value="0"/>
+                <Setter Property="BorderColor" Value="{ StaticResource pages_text_color }"/>
+
+            </Style>
+
+            <Style x:Key="grids_labels_style" TargetType="Label">
+
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="15"/>
+
+            </Style>
+
+            <Style x:Key="titles_grid_labels_style" TargetType="Label" BaseResourceKey="grids_labels_style">
+
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="{ StaticResource pages_background_color }"/>
+
+            </Style>
+
+            <Style x:Key="values_grid_labels_style" TargetType="Label" BaseResourceKey="grids_labels_style">
+
+                <Setter Property="TextColor" Value="{ StaticResource pages_text_color }"/>
+
+            </Style>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+</Application>

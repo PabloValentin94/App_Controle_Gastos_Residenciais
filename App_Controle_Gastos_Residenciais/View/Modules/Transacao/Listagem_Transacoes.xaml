@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Controle_Gastos_Residenciais.View.Modules.Transacao.Listagem_Transacoes"
+             Title="Listagem de Transações"
+             Style="{ StaticResource pages_style }">
+
+    <!-- Botões da barra de navegação superior. -->
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="btn_novo_cadastro_transacao" Clicked="btn_novo_cadastro_transacao_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="Auto,*" Style="{ StaticResource root_grid_style }">
+
+            <!-- Cabeçalho da tabela. -->
+
+            <VerticalStackLayout Grid.Column="0" Grid.Row="0">
+
+                <Frame BackgroundColor="{ StaticResource pages_text_color }" Style="{ StaticResource frames_style }">
+
+                    <Grid ColumnDefinitions="*,*,*" RowDefinitions="*">
+
+                        <Label Text="Criador" Grid.Column="0" Grid.Row="0" Style="{ StaticResource titles_grid_labels_style }"/>
+
+                        <Label Text="Tipo" Grid.Column="1" Grid.Row="0" Style="{ StaticResource titles_grid_labels_style }"/>
+
+                        <Label Text="Valor" Grid.Column="2" Grid.Row="0" Style="{ StaticResource titles_grid_labels_style }"/>
+
+                    </Grid>
+
+                </Frame>
+
+            </VerticalStackLayout>
+
+            <!-- Tabela de listagem das transações cadastradas. -->
+
+            <ListView x:Name="list_view_transacoes" Grid.Column="0" Grid.Row="1" HasUnevenRows="True">
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <!-- Template de como cada linha da tabela deve dispor seu conteúdo. -->
+
+                            <ViewCell.View>
+
+                                <VerticalStackLayout>
+
+                                    <Frame BackgroundColor="Transparent" Style="{ StaticResource frames_style }">
+
+                                        <Grid ColumnDefinitions="*,*,*" RowDefinitions="*">
+
+                                            <!--
+                                            
+                                                Cada linha da tabela refere-se a um objeto. O "Binding" serve para acessar o valor de um atributo específico desse objeto.
+                                                O "Path" é útil quando queremos especificar o caminho de um atributo que não está diretamente anexado no objeto associado a 
+                                                linha da tabela, como quando temos um objeto dentro de outro, por exemplo.
+                                                O "StringFormat" converte um texto para um padrão de exibição específico, como datas ou valores monetários.
+                                            
+                                            -->
+
+                                            <Label Text="{ Binding Path=pessoa.nome }" Grid.Column="0" Grid.Row="0" Style="{ StaticResource values_grid_labels_style }"/>
+
+                                            <Label Text="{ Binding tipo }" Grid.Column="1" Grid.Row="0" Style="{ StaticResource values_grid_labels_style }"/>
+
+                                            <Label Text="{ Binding valor, StringFormat='{}{0:c}' }" Grid.Column="2" Grid.Row="0" Style="{ StaticResource values_grid_labels_style }"/>
+
+                                        </Grid>
+
+                                    </Frame>
+
+                                </VerticalStackLayout>
+
+                            </ViewCell.View>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="App_Controle_Gastos_Residenciais.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:App_Controle_Gastos_Residenciais"
+    Title="App_Controle_Gastos_Residenciais">
+
+    <Shell.Style>
+
+        <Style TargetType="Shell">
+            
+            <!--
+            
+                Nos comandos abaixo deste comentário, estamos fazendo as seguintes configurações, na respectiva ordem:
+            
+                - Desabilitando o menu lateral;
+            
+                - Habilitando a barra de navegação do Shell;
+                - Alterando a cor do fundo da barra de navegação do Shell;
+                - Alterando a cor do texto da barra de navegação do Shell;
+            
+                - Alterando a cor do fundo da barra inferior de abas do aplicativo;
+                - Alterando a cor do texto, que estiver selecionado, da barra inferior de abas do aplicativo;
+                - Alterando a cor do texto, que não estiver selecionado, da barra inferior de abas do aplicativo;
+                - Alterando a cor dos ícones da barra inferior de abas do aplicativo.
+            
+            -->
+
+            <Setter Property="FlyoutBehavior" Value="Disabled"/>
+            
+            <Setter Property="Shell.NavBarIsVisible" Value="True"/>
+            <Setter Property="Shell.BackgroundColor" Value="{ StaticResource shell_background_color }"/>
+            <Setter Property="Shell.TitleColor" Value="{ StaticResource main_color }"/>
+
+            <Setter Property="Shell.TabBarBackgroundColor" Value="{ StaticResource shell_background_color }"/>
+            <Setter Property="Shell.TabBarTitleColor" Value="{ StaticResource main_color }"/>
+            <Setter Property="Shell.TabBarUnselectedColor" Value="{ StaticResource shell_text_color }"/>
+            <Setter Property="Shell.TabBarForegroundColor" Value="{ StaticResource main_color }"/>
+
+        </Style>
+        
+    </Shell.Style>
+    
+    <!-- Criando uma barra de navegação na parte inferior da tela do dispositivo. -->
+
+    <TabBar>
+
+        <ShellContent x:Name="tab_pessoa" Title="Pessoas" Route="Pessoa"/> <!-- Aba - Pessoas. -->
+
+        <ShellContent x:Name="tab_transacao" Title="Transações" Route="Transacao"/> <!-- Aba - Transações. -->
+
+        <ShellContent x:Name="tab_totais" Title="Totais" Route="Totais"/> <!-- Aba - Consulta - Valores Totais. -->
+
+    </TabBar>
+
+</Shell>

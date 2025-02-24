@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Controle_Gastos_Residenciais.View.Modules.Transacao.Totais_Transacoes"
+             Title="Consulta - Totais"
+             Style="{ StaticResource pages_style }">
+
+    <!-- Estilos específicos desta página. -->
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <Style x:Key="query_button_style" TargetType="Button">
+
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BackgroundColor" Value="{ StaticResource pages_text_color }"/>
+                <Setter Property="TextColor" Value="{ StaticResource main_color }"/>
+                <Setter Property="TextTransform" Value="Uppercase"/>
+
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="Auto,*,Auto" Style="{ StaticResource root_grid_style }">
+
+            <!-- Cabeçalho da tabela. -->
+
+            <VerticalStackLayout Spacing="15" Grid.Column="0" Grid.Row="0">
+
+                <Label Text="Exibindo os valores totais de cada pessoa." Style="{ StaticResource labels_style }"/>
+
+                <Frame BackgroundColor="{ StaticResource pages_text_color }" Style="{ StaticResource frames_style }">
+
+                    <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="*">
+
+                        <Label Text="Pessoa" Grid.Column="0" Grid.Row="0" Style="{ StaticResource titles_grid_labels_style }"/>
+
+                        <Label Text="Despesas" Grid.Column="1" Grid.Row="0" Style="{ StaticResource titles_grid_labels_style }"/>
+
+                        <Label Text="Receitas" Grid.Column="2" Grid.Row="0" Style="{ StaticResource titles_grid_labels_style }"/>
+
+                        <Label Text="Saldo" Grid.Column="3" Grid.Row="0" Style="{ StaticResource titles_grid_labels_style }"/>
+
+                    </Grid>
+
+                </Frame>
+
+            </VerticalStackLayout>
+
+            <!-- Tabela de listagem dos valores monetários totais de cada pessoa. -->
+
+            <ListView x:Name="list_view_totais_pessoas" Grid.Column="0" Grid.Row="1" HasUnevenRows="True">
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <!-- Template de como cada linha da tabela deve dispor seu conteúdo. -->
+
+                            <ViewCell.View>
+
+                                <VerticalStackLayout>
+
+                                    <Frame BackgroundColor="Transparent" Style="{ StaticResource frames_style }">
+
+                                        <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="*">
+
+                                            <!--
+
+                                                Cada linha da tabela refere-se a um objeto. O "Binding" serve para acessar o valor de um atributo específico desse objeto.
+                                                O "Path" é útil quando queremos especificar o caminho de um atributo que não está diretamente anexado no objeto associado a 
+                                                linha da tabela, como quando temos um objeto dentro de outro, por exemplo.
+                                                O "StringFormat" converte um texto para um padrão de exibição específico, como datas ou valores monetários.
+
+                                            -->
+
+                                            <Label Text="{ Binding nome }" Grid.Column="0" Grid.Row="0" Style="{ StaticResource values_grid_labels_style }"/>
+
+                                            <Label Text="{ Binding Path=valores_totais.total_despesas, StringFormat='{}{0:c}' }" Grid.Column="1" Grid.Row="0" Style="{ StaticResource values_grid_labels_style }"/>
+
+                                            <Label Text="{ Binding Path=valores_totais.total_receitas, StringFormat='{}{0:c}' }" Grid.Column="2" Grid.Row="0" Style="{ StaticResource values_grid_labels_style }"/>
+
+                                            <Label Text="{ Binding Path=valores_totais.saldo_total, StringFormat='{}{0:c}' }" Grid.Column="3" Grid.Row="0" Style="{ StaticResource values_grid_labels_style }"/>
+
+                                        </Grid>
+
+                                    </Frame>
+
+                                </VerticalStackLayout>
+
+                            </ViewCell.View>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+            <Button x:Name="btn_exibir_dados_monetarios_gerais" Text="Consultar Dados Gerais" Grid.Column="0" Grid.Row="2" Clicked="btn_exibir_dados_monetarios_gerais_Clicked" Style="{ StaticResource query_button_style }"/>
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>
