@@ -94,7 +94,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="MySql.Data" Version="9.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -113,6 +113,10 @@
 	  <MauiXaml Update="View\Modules\Transacao\Totais_Transacoes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Database\" />
 	</ItemGroup>
 
 </Project>

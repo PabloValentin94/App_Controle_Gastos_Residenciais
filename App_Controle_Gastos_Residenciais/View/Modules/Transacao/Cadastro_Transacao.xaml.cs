@@ -22,7 +22,7 @@ public partial class Cadastro_Transacao : ContentPage
 
             // Preenchendo a caixa de seleção do proprietário da transação.
 
-            pck_proprietario_transacao.ItemsSource = await Model.Pessoa.List();
+            pck_proprietario_transacao.ItemsSource = Model.Pessoa.List();
 
             // Definindo que o primeiro item da caixa de seleção do proprietário da transação é que deve ser exibido.
 
@@ -162,7 +162,7 @@ public partial class Cadastro_Transacao : ContentPage
 
                 // Obtendo o resultado retornado pelo método "Save" da camada Model.
 
-                bool success = await model.Save();
+                bool success = model.Save();
 
                 // Se os dados forem cadastrados corretamente, será exibida uma mensagem de êxito, senão, uma de erro.
 

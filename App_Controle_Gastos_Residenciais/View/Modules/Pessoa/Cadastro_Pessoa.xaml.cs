@@ -1,11 +1,13 @@
 using App_Controle_Gastos_Residenciais.Model;
 
+using System.Collections.ObjectModel;
+
 namespace App_Controle_Gastos_Residenciais.View.Modules.Pessoa;
 
 public partial class Cadastro_Pessoa : ContentPage
 {
 
-	public Cadastro_Pessoa()
+    public Cadastro_Pessoa()
 	{
 
 		InitializeComponent();
@@ -43,7 +45,7 @@ public partial class Cadastro_Pessoa : ContentPage
 
                 // Obtendo o resultado retornado pelo método "Save" da camada Model.
 
-                bool success = await model.Save();
+                bool success = model.Save();
 
                 // Se os dados forem cadastrados corretamente, será exibida uma mensagem de êxito, senão, uma de erro.
 

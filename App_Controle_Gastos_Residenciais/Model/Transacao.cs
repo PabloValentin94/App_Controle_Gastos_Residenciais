@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using App_Controle_Gastos_Residenciais.Service;
+using App_Controle_Gastos_Residenciais.DAO;
 
 namespace App_Controle_Gastos_Residenciais.Model
 {
@@ -28,21 +28,21 @@ namespace App_Controle_Gastos_Residenciais.Model
 
         // Métodos.
 
-        public async Task<bool> Save()
+        public bool Save()
         {
 
-            // Retornando o resultado do método "Save" da camada Service.
+            // Retornando o resultado do método "Insert" da camada DAO.
 
-            return await Data_Service_Transacao.Save(this);
+            return (new TransacaoDAO()).Insert(this);
 
         }
 
-        public static async Task<List<Transacao>?> List()
+        public static List<Transacao> List()
         {
 
-            // Retornando o resultado do método "List" da camada Service.
+            // Retornando o resultado do método "Select" da camada DAO.
 
-            return await Data_Service_Transacao.List();
+            return (new TransacaoDAO()).Select();
 
         }
 
