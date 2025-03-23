@@ -2,16 +2,14 @@ using App_Controle_Gastos_Residenciais.Model;
 
 using System.Threading.Tasks;
 
-using System.Collections.ObjectModel;
-
 namespace App_Controle_Gastos_Residenciais.View.Modules.Pessoa;
 
 public partial class Listagem_Pessoas : ContentPage
 {
 
-    // Definindo uma lista dinâmica de itens.
+    // Definindo uma lista de itens.
 
-	ObservableCollection<Model.Pessoa> listagem_pessoas = new ObservableCollection<Model.Pessoa>();
+	List<Model.Pessoa> listagem_pessoas = new List<Model.Pessoa>();
 
 	public Listagem_Pessoas()
 	{
@@ -64,11 +62,11 @@ public partial class Listagem_Pessoas : ContentPage
 
                 await Task.Run(() => {
 
-                    // Removendo todos os itens da lista dinâmica.
+                    // Removendo todos os itens da lista.
 
                     this.listagem_pessoas.Clear();
 
-                    // Inserindo todos os registros retornados pelo banco de dados na lista dinâmica.
+                    // Inserindo todos os registros retornados pelo banco de dados na lista.
 
                     lista_pessoas.ForEach(pessoa => { this.listagem_pessoas.Add(pessoa); });
 
@@ -83,7 +81,7 @@ public partial class Listagem_Pessoas : ContentPage
             else
             {
 
-                // Removendo todos os itens da lista dinâmica.
+                // Removendo todos os itens da lista.
 
                 this.listagem_pessoas.Clear();
 
@@ -134,7 +132,7 @@ public partial class Listagem_Pessoas : ContentPage
             if (await DisplayAlert("Aviso!", "A página atual será fechada! Deseja prosseguir?", "Sim", "Não"))
             {
 
-                // Excluindo todos os itens da lista dinâmica, pois ela será preenchida novamente quando esta página for aberta outra vez.
+                // Excluindo todos os itens da lista, pois ela será preenchida novamente quando esta página for aberta outra vez.
 
                 this.listagem_pessoas.Clear();
 
@@ -179,7 +177,7 @@ public partial class Listagem_Pessoas : ContentPage
                 if (await Model.Pessoa.Erase(pessoa_selecionada.id))
                 {
 
-                    // Excluindo o item selecionado no ListView da lista dinâmica.
+                    // Excluindo o item selecionado no ListView da lista.
 
                     this.listagem_pessoas.Remove(pessoa_selecionada);
 

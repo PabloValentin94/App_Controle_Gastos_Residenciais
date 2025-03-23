@@ -2,16 +2,14 @@ using App_Controle_Gastos_Residenciais.Model;
 
 using System.Threading.Tasks;
 
-using System.Collections.ObjectModel;
-
 namespace App_Controle_Gastos_Residenciais.View.Modules.Transacao;
 
 public partial class Totais_Transacoes : ContentPage
 {
 
-    // Definindo uma lista dinâmica.
+    // Definindo uma lista.
 
-    ObservableCollection<Model.Pessoa> listagem_pessoas = new ObservableCollection<Model.Pessoa>();
+    List<Model.Pessoa> listagem_pessoas = new List<Model.Pessoa>();
 
     // Definindo um array que armazena os valores monetários gerais (De todas as pessoas somadas.).
 
@@ -98,11 +96,11 @@ public partial class Totais_Transacoes : ContentPage
                 await Task.Run(() =>
                 {
 
-                    // Removendo todos os itens da lista dinâmica.
+                    // Removendo todos os itens da lista.
 
                     this.listagem_pessoas.Clear();
 
-                    // Inserindo todos os registros retornados pelo banco de dados na lista dinâmica.
+                    // Inserindo todos os registros retornados pelo banco de dados na lista.
 
                     lista_pessoas.ForEach(pessoa => { this.listagem_pessoas.Add(pessoa); });
 
@@ -121,7 +119,7 @@ public partial class Totais_Transacoes : ContentPage
             else
             {
 
-                // Removendo todos os itens da lista dinâmica.
+                // Removendo todos os itens da lista.
 
                 this.listagem_pessoas.Clear();
 
