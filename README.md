@@ -1,8 +1,8 @@
-# APP - Sistema de Controle de Gastos Residenciais
+# APP (Sem API) - Sistema de Controle de Gastos Residenciais
 
 Desenvolvimento de um aplicativo que permite que pessoas possam gerenciar suas transações monetárias.
 
-## Layout (Aplicação C#)
+## Layout / Funcionalidades (Aplicação C#)
 
 O aplicativo consiste em três abas inferiores, sendo elas:
 
@@ -11,6 +11,16 @@ O aplicativo consiste em três abas inferiores, sendo elas:
 - Transações (Cadastro e listagem de transações.);
 
 - Totais (Consulta do total em despesas, receitas e saldo de cada pessoa, e, também, dos valores gerais.).
+
+## Consulta de Totais de Gastos
+
+Na terceira aba do aplicativo será exibida uma listagem de todas as pessoas e seus gastos. Gastos calculados:
+
+- Total de despesas de cada pessoa;
+
+- Total de receitas de cada pessoa;
+
+- Saldo total de cada pessoa (Receitas - despesas.).
 
 ## Como Executar o Aplicativo
 
@@ -22,6 +32,18 @@ O aplicativo consiste em três abas inferiores, sendo elas:
 
 Tenha em mente que para o funcionamento correto, é preciso ter um emulador android configurado no Visual Studio.
 
-## Onde encontrar a API
+## Estrutura - Banco de Dados
 
-[Clique aqui](https://github.com/PabloValentin94/API_Controle_Gastos_Residenciais) para abrir o repositório da API deste projeto. Leia o README da API para compreender seu funcionamento.
+- Tabela Pessoa: id, nome e idade;
+
+- Tabela Transacao: id, descricao, valor, tipo e id da pessoa (Criador da transação.).
+
+## Como Rodar o Banco de Dados
+
+- Abra algum SGBD MySQL (MySQL Workbench, SQLyog, etc.) e execute o arquivo **"DDL.sql"**, localizado na pasta **"Database"**;
+
+- Se necessário, altere os parâmetros de conexão com o banco de dados localizados no arquivo **"Connection.cs"**, dentro da pasta **"DAO"**.
+
+## Como Utilizar o pacote nuget MySQL.Data (Fonte: [Tiago A. Silva](https://www.youtube.com/@prof.tiagotas))
+
+- Playlist: [Clique aqui](https://www.youtube.com/playlist?list=PLHVpcBDJr5dlCd-l3GwnoqMETMdbxNDCl).
