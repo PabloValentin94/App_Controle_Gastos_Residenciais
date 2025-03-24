@@ -22,16 +22,6 @@ Na terceira aba do aplicativo será exibida uma listagem de todas as pessoas e s
 
 - Saldo total de cada pessoa (Receitas - despesas.).
 
-## Como Executar o Aplicativo
-
-- Abra a solução do projeto através do Visual Studio (Não é o Code.);
-
-- Nas opções de dispositivos de depuração, selecione alguma opção de dispositivo android;
-
-- Inicie a depuração do aplicativo (Caso ocorra algum erro, tente recompilar o aplicativo e a solução do projeto e depure novamente.).
-
-Tenha em mente que para o funcionamento correto, é preciso ter um emulador android configurado no Visual Studio.
-
 ## Estrutura - Banco de Dados
 
 - Tabela Pessoa: id, nome e idade;
@@ -44,6 +34,16 @@ Tenha em mente que para o funcionamento correto, é preciso ter um emulador andr
 
 - Se necessário, altere os parâmetros de conexão com o banco de dados localizados no arquivo **"Connection.cs"**, dentro da pasta **"DAO"**.
 
-## Como Utilizar o pacote nuget MySQL.Data (Fonte: [Tiago A. Silva](https://www.youtube.com/@prof.tiagotas))
+## Como Executar o Aplicativo
+
+- Abra a solução do projeto através do Visual Studio (Não é o Code.);
+
+- Nas opções de dispositivos de depuração, selecione alguma opção de dispositivo android;
+
+- Inicie a depuração do aplicativo (Caso ocorra algum erro, tente recompilar o aplicativo e a solução do projeto e depure novamente.).
+
+Tenha em mente que para o funcionamento correto, é preciso ter um emulador android configurado no Visual Studio.
+
+## Pacote Nuget (C#) - MySQL.Data (Fonte: [Tiago A. Silva](https://www.youtube.com/@prof.tiagotas))
 
 - Playlist: [Clique aqui](https://www.youtube.com/playlist?list=PLHVpcBDJr5dlCd-l3GwnoqMETMdbxNDCl).
