@@ -1,7 +1,5 @@
 using App_Controle_Gastos_Residenciais.Model;
 
-using System.Collections.ObjectModel;
-
 namespace App_Controle_Gastos_Residenciais.View.Modules.Pessoa;
 
 public partial class Cadastro_Pessoa : ContentPage

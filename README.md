@@ -44,6 +44,24 @@ Na terceira aba do aplicativo será exibida uma listagem de todas as pessoas e s
 
 Tenha em mente que para o funcionamento correto, é preciso ter um emulador android configurado no Visual Studio.
 
+## Evitando um Possível Erro
+
+Ao baixar este projeto como um .ZIP, o arquivo seguirá o seguinte padrão de nomenclatura:
+
+```bash
+App_Controle_Gastos_Residenciais-"Nome da branch selecionada."
+```
+
+Essa estrutura pode ocasionar um erro quando o projeto for executado no Visual Studio. Para evitar isso, tente uma das opções abaixo:
+
+- Clonar o projeto, ao invés de baixá-lo (Lembre-se de trocar a branch no terminal do Git.);
+
+- Renomear as pastas do projeto, após a descompactação, que seguem a estrutura de erro, para o seguinte padrão:
+
+```bash
+App_Controle_Gastos_Residenciais
+```
+
 ## Pacote Nuget (C#) - MySQL.Data (Fonte: [Tiago A. Silva](https://www.youtube.com/@prof.tiagotas))
 
 - Playlist: [Clique aqui](https://www.youtube.com/playlist?list=PLHVpcBDJr5dlCd-l3GwnoqMETMdbxNDCl).

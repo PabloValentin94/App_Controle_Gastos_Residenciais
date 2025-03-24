@@ -14,7 +14,7 @@ namespace App_Controle_Gastos_Residenciais.DAO
     public class TransacaoDAO : Connection // Extendendo da classe Connection (Herança.).
     {
 
-        // Executando o construtor da classe pai à partir do construtor da classe filha (Herança.).
+        // Executando o construtor da classe pai a partir do construtor da classe filha (Herança.).
 
         public TransacaoDAO() : base() {  }
 
@@ -59,7 +59,7 @@ namespace App_Controle_Gastos_Residenciais.DAO
                     O método "ExecuteNonQuery()" executa a declaração MySQL que foi definida e retorna a 
                     quantidade de linhas da tabela referenciada que foram afetadas. Se um novo registro 
                     foi inserido, então uma linha foi afetada, senão, nenhuma linha foi afetada. A partir 
-                    deste retorno podemos definir se uma consulta foi executada com sucesso, utilizando um 
+                    deste retorno, podemos definir se uma consulta foi executada com sucesso, utilizando um 
                     valor booleano ("True", se funcionou, e "False", caso não tenha funcionado). É exatamente 
                     isso que a linha abaixo faz.
 
@@ -121,7 +121,7 @@ namespace App_Controle_Gastos_Residenciais.DAO
 
                 /*
                  
-                    O método "ExecuteReader()" retorna uma lista, do tipo MySQLDataReader, de registros 
+                    O método "ExecuteReader()" retorna uma lista, do tipo MySqlDataReader, de registros 
                     da tabela referenciada na declaração de execução para o MySQL.
 
                  */
@@ -130,7 +130,7 @@ namespace App_Controle_Gastos_Residenciais.DAO
 
                 /*
                  
-                    O método "Read()" faz com que o MySQLDataReader utilizado avance para a próxima 
+                    O método "Read()" faz com que o MySqlDataReader utilizado avance para a próxima 
                     "linha" na lista de registros, ou seja, avança para o registro a seguir dentro 
                     dessa lista. Caso não haja um próximo registro, o método retornará "False". Analisando 
                     esse funcionamento, se o utilizarmos dentro de um looping, podemos percorrer todos 

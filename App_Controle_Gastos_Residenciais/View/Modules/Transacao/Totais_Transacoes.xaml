@@ -107,6 +107,8 @@
 
             </ListView>
 
+            <!-- Botão de exibição dos dados monetários gerais. -->
+
             <Button x:Name="btn_exibir_dados_monetarios_gerais" Text="Consultar Dados Gerais" Grid.Column="0" Grid.Row="2" Clicked="btn_exibir_dados_monetarios_gerais_Clicked" Style="{ StaticResource query_button_style }"/>
 
         </Grid>

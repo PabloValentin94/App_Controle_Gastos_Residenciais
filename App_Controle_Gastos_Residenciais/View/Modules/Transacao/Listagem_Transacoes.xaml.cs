@@ -7,7 +7,7 @@ namespace App_Controle_Gastos_Residenciais.View.Modules.Transacao;
 public partial class Listagem_Transacoes : ContentPage
 {
 
-    // Definindo uma lista dinâmica de itens.
+    // Definindo uma lista de itens.
 
     List<Model.Transacao> listagem_transacoes = new List<Model.Transacao>();
 
@@ -51,7 +51,7 @@ public partial class Listagem_Transacoes : ContentPage
 
             List<Model.Transacao> lista_transacoes = Model.Transacao.List();
 
-            // Verificando o banco de dados retornou uma lista com ao menos um registro.
+            // Verificando se o banco de dados retornou uma lista com ao menos um registro.
 
             if (lista_transacoes != null && lista_transacoes.Count > 0)
             {
@@ -110,7 +110,7 @@ public partial class Listagem_Transacoes : ContentPage
 
             List<Model.Pessoa> lista_pessoas = Model.Pessoa.List();
 
-            // Verificando o banco de dados retornou uma lista com ao menos um registro.
+            // Verificando se o banco de dados retornou uma lista com ao menos um registro.
 
             if (lista_pessoas != null && lista_pessoas.Count > 0)
             {

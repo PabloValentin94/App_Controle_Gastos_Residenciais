@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +14,11 @@ namespace App_Controle_Gastos_Residenciais.DAO
     public class TotaisDAO : Connection // Extendendo da classe Connection (Herança.).
     {
 
-        // Executando o construtor da classe pai à partir do construtor da classe filha (Herança.).
+        // Executando o construtor da classe pai a partir do construtor da classe filha (Herança.).
 
         public TotaisDAO() : base() {  }
 
-        // Método que calcula os dados monetários da pessoa especificada, com base na coluna "ID".
+        // Método que calcula os dados monetários da pessoa especificada, com base na coluna "ID" da tabela do banco de dados MySQL.
 
         public Totais Calculate_Totals(int fk_pessoa)
         {
@@ -57,7 +56,7 @@ namespace App_Controle_Gastos_Residenciais.DAO
 
                 /*
                  
-                    O método "ExecuteReader()" retorna uma lista, do tipo MySQLDataReader, de registros 
+                    O método "ExecuteReader()" retorna uma lista, do tipo MySqlDataReader, de registros 
                     da tabela referenciada na declaração de execução para o MySQL.
 
                  */
@@ -66,12 +65,14 @@ namespace App_Controle_Gastos_Residenciais.DAO
 
                 /*
                  
-                    O método "Read()" faz com que o MySQLDataReader utilizado avance para a próxima 
+                    O método "Read()" faz com que o MySqlDataReader utilizado avance para a próxima 
                     "linha" na lista de registros, ou seja, avança para o registro a seguir dentro 
                     dessa lista. Caso não haja um próximo registro, o método retornará "False". Analisando 
                     esse funcionamento, se o utilizarmos dentro de um looping, podemos percorrer todos 
                     os registros presentes na lista retornada pelo banco de dados MySQL. É exatamente esse 
                     processo que ocorre na linha abaixo.
+                    Como passamos o parâmetro "fk_pessoa" como um filtro, apenas uma linha será 
+                    retornada na lista.
 
                  */
 
@@ -95,9 +96,9 @@ namespace App_Controle_Gastos_Residenciais.DAO
 
                          */
 
-                        total_despesas = (dados_retornados.IsDBNull(0)) ? 0.00 : dados_retornados.GetDouble(0), // Obtendo o valor do campo do registro atual cujo índice da coluna é igual a zero.
+                        total_despesas = (dados_retornados.IsDBNull(0)) ? 0.00 : dados_retornados.GetDouble(0), // Obtendo o valor do campo da linha atual cujo índice da coluna é igual a zero.
 
-                        total_receitas = (dados_retornados.IsDBNull(1)) ? 0.00 : dados_retornados.GetDouble(1) // Obtendo o valor do campo do registro atual cujo índice da coluna é igual a um.
+                        total_receitas = (dados_retornados.IsDBNull(1)) ? 0.00 : dados_retornados.GetDouble(1) // Obtendo o valor do campo da linha atual cujo índice da coluna é igual a um.
 
                     };
 
@@ -110,7 +111,7 @@ namespace App_Controle_Gastos_Residenciais.DAO
                 /*
                  
                     Se a pessoa informada não possuir nenhuma transação cadastrada no banco de dados, 
-                    o MySQL não retornará dados, porém, é preciso ter algo para mostrar ao usuário tela 
+                    o MySQL não retornará dados, porém, é preciso ter algo para mostrar ao usuário na tela 
                     de exibição, nem que sejam valores monetários zerados, pois se exibirmos campos em branco 
                     na tela, ele poderá pensar que o aplicativo deu um erro inesperado. Essa validação é feita 
                     a seguir.

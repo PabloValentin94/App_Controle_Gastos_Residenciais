@@ -7,7 +7,7 @@ namespace App_Controle_Gastos_Residenciais.View.Modules.Pessoa;
 public partial class Listagem_Pessoas : ContentPage
 {
 
-    // Definindo uma lista dinâmica de itens.
+    // Definindo uma lista de itens.
 
     List<Model.Pessoa> listagem_pessoas = new List<Model.Pessoa>();
 
@@ -53,7 +53,7 @@ public partial class Listagem_Pessoas : ContentPage
 
             List<Model.Pessoa> lista_pessoas = Model.Pessoa.List();
 
-            // Verificando o banco de dados retornou uma lista com ao menos um registro.
+            // Verificando se o banco de dados retornou uma lista com ao menos um registro.
 
             if (lista_pessoas != null && lista_pessoas.Count > 0)
             {
